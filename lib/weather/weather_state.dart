@@ -6,7 +6,6 @@ class WeatherState {
   final bool isCreateButtonEnabled;
   final String error;
   final WeatherForecastModel weatherModel;
-  final String areaDetails;
 
   void dispose() {}
 
@@ -14,8 +13,7 @@ class WeatherState {
       {@required this.isLoading,
       @required this.isCreateButtonEnabled,
       @required this.error,
-      this.weatherModel,
-      this.areaDetails})
+      this.weatherModel})
       : super();
 
   factory WeatherState.initial() {
@@ -33,13 +31,11 @@ class WeatherState {
         isLoading: false, isCreateButtonEnabled: true, error: error);
   }
   @override
-  factory WeatherState.success(
-      {WeatherForecastModel weatherModel, String areaDetails}) {
+  factory WeatherState.success({WeatherForecastModel weatherModel}) {
     return WeatherState(
         isLoading: false,
         isCreateButtonEnabled: true,
         error: '',
-        weatherModel: weatherModel,
-        areaDetails: areaDetails);
+        weatherModel: weatherModel);
   }
 }

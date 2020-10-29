@@ -38,7 +38,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         if (result != null) {
           result.city.areaDescription = _areaDetails;
           yield WeatherState.success(
-              weatherModel: result, areaDetails: _areaDetails);
+              weatherModel: result);
         }
       } catch (error) {
         yield WeatherState.failure(error.toString());
